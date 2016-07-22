@@ -296,12 +296,12 @@ var Search = {
   performSearch : function(query) {
     // create the required interface elements
     this.out = $('#search-results');
-    this.title = $('<h2>' + _('Searching') + '</h2>').appendTo(this.out);
+    this.title = $('<h2>' + _('Procurando') + '</h2>').appendTo(this.out);
     this.dots = $('<span></span>').appendTo(this.title);
     this.status = $('<p style="display: none"></p>').appendTo(this.out);
     this.output = $('<ul class="search"/>').appendTo(this.out);
 
-    $('#search-progress').text(_('Preparing search...'));
+    $('#search-progress').text(_('Preparando pesquisa...'));
     this.startPulse();
 
     // index already loaded, the browser was quick!
@@ -458,11 +458,11 @@ var Search = {
       // search finished, update title and status message
       else {
         Search.stopPulse();
-        Search.title.text(_('Search Results'));
+        Search.title.text(_('Resultados da Pesquisa'));
         if (!resultCount)
-          Search.status.text(_('Your search did not match any documents. Please make sure that all words are spelled correctly and that you\'ve selected enough categories.'));
+          Search.status.text(_('Sua pesquisa não encontrou nenhum documento. Certifique-se que todas as palavras estão escritas corretamente e que você tenha selecionado categorias suficientes.'));
         else
-            Search.status.text(_('Search finished, found %s page(s) matching the search query.').replace('%s', resultCount));
+            Search.status.text(_('Pesquisa concluída, encontrou %s páginas(s) coincidindo com a consulta de pesquisa.').replace('%s', resultCount));
         Search.status.fadeIn(500);
       }
     }
